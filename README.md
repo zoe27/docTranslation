@@ -14,22 +14,3 @@
 1. Fork 本项目并上传至 GitHub
 2. 登录 Vercel，连接该仓库，一键部署
 3. 配置以下环境变量（参考 .env.example）：
-
-- NEXT_PUBLIC_SUPABASE_URL
-- NEXT_PUBLIC_SUPABASE_ANON_KEY
-- STRIPE_SECRET_KEY
-- NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-- STRIPE_WEBHOOK_SECRET
-
-4. 在 Supabase 控制台中建立表：
-- users（自动）
-- subscriptions（字段包含 user_id, plan_id, credits, expires_at）
-- payments（可选记录历史）
-
-5. Stripe 控制台中创建产品与价格（SKU）
-
-## ✅ 页面路径
-
-- `/`：官网首页
-- `/pricing`：套餐页
-- `/dashboard`：用户控制台
