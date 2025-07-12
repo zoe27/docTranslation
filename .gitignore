@@ -1,0 +1,7 @@
+node_modules
+.env*
+next-env.d.ts
+.next/build-manifest.json
+.next/react-loadable-manifest.json
+.next/*
+
