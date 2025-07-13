@@ -93,3 +93,6 @@ npm run start
 ## 📌 说明
 
 如需扩展其他功能（上传文档、展示翻译历史等），请继续开发 Dashboard 模块。
+
+
+> 本项目适用于：PDF 译文生成、高保真翻译、PDF layout 保留、技术文档翻译、外贸资料翻译、翻译 SaaS 工具、Next.js 文档处理平台、Stripe 支付订阅系统、Supabase 用户注册认证等应用场景。
