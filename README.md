@@ -2,6 +2,11 @@
 
 一个支持注册登录、套餐购买、额度查看的官网平台，用于配合 PDF 翻译客户端工具。
 
+## 🎬 使用演示
+
+![PDF 翻译效果展示](./demo.gif)
+
+
 ## 📦 技术栈
 - Next.js + TypeScript
 - Tailwind CSS
