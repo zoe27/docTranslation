@@ -54,6 +54,25 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {/* 功能介绍区块 */}
+        <section id="features" className="max-w-5xl mx-auto mt-20 grid gap-8 md:grid-cols-3 text-center">
+          <div className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+            <div className="text-4xl mb-4">🧩</div>
+            <h3 className="text-xl font-semibold mb-2">高度还原格式</h3>
+            <p className="text-gray-600">智能解析排版，保留原始图片与字体样式，翻译结果几乎一致。</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+            <div className="text-4xl mb-4">🔐</div>
+            <h3 className="text-xl font-semibold mb-2">数据本地处理</h3>
+            <p className="text-gray-600">所有翻译操作均在本地执行，无需上传文件，确保隐私安全。</p>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+            <div className="text-4xl mb-4">🌍</div>
+            <h3 className="text-xl font-semibold mb-2">多语言支持</h3>
+            <p className="text-gray-600">接入多种翻译引擎，支持中英互译及多语种文档翻译。</p>
+          </div>
+        </section>
       </main>
     </>
   )
