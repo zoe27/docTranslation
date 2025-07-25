@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Header from '../components/Header'
+
 
 export default function Pricing() {
   return (
@@ -7,6 +9,9 @@ export default function Pricing() {
         <title>定价方案 - PDF Translation</title>
         <meta name="description" content="选择适合你的翻译套餐，支持点数购买和订阅服务。" />
       </Head>
+
+      <Header />
+
       <main className="min-h-screen px-6 py-24 bg-white text-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold mb-6">选择适合你的套餐</h1>
