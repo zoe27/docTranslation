@@ -53,7 +53,7 @@ export default function DownloadPage() {
           <h2 className="text-2xl font-semibold mb-4">客户端下载</h2>
           <p className="mb-4 text-gray-700">适用于 Windows 系统，目前为内测版本</p>
           <a
-            href="https://github.com/zoe27/doc2doc/releases/download/internal-20250724/ParagraphEditor.zip"
+            href="https://github.com/zoe27/doc2doc/releases/download/internal-20250725/ParagraphEditor.zip"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
