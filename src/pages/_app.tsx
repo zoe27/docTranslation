@@ -13,6 +13,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <script src="//code.tidio.co/wbkzxxrbm3ym4auqw0vjdxec3csyierl.js" async></script>
+
       {/* ✅ 包裹 Layout（可扩展导航、footer） */}
       <Component {...pageProps} />
     </>
