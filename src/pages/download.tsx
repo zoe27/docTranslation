@@ -60,7 +60,7 @@ export default function DownloadPage() {
           >
             ⬇️ 下载 ParagraphEditor.zip
           </a>
-          <p className="mt-4 text-sm text-gray-500">版本：internal-20250724</p>
+          <p className="mt-4 text-sm text-gray-500">版本：internal-20250725</p>
         </div>
 
         {/* FAQ Section */}
