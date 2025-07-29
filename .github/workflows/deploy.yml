@@ -31,6 +31,10 @@ jobs:
         env:
           TCB_SECRET_ID: ${{ secrets.SECRETID }}
           TCB_SECRET_KEY: ${{ secrets.SECRETKEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }} 
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
         run: |
           tcb login --apiKeyId $TCB_SECRET_ID --apiKey $TCB_SECRET_KEY --use-local
           tcb framework deploy --force
