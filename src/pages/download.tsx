@@ -27,7 +27,7 @@ export default function DownloadPage() {
           <p className="text-gray-600 mb-4">适用于 Windows 系统，免安装绿色版，文件大小约 200MB</p>
 
           <a
-            href="https://github.com/zoe27/doc2doc/releases/download/internal-20250724/ParagraphEditor.zip"
+            href="https://pan.baidu.com/s/1sdNFx8d--N0J2FnKCtD9HA?pwd=ddsd"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
