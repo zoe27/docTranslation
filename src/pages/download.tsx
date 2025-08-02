@@ -27,7 +27,7 @@ export default function DownloadPage() {
           <p className="text-gray-600 mb-4">适用于 Windows 系统，免安装绿色版，文件大小约 200MB</p>
 
           <a
-            href="https://share.weiyun.com/VyEJo0PL"
+            href="https://share.weiyun.com/gHg3HUYb"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
