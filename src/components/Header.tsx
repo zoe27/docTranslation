@@ -7,8 +7,17 @@ export default function Header() {
       <nav className="space-x-6 hidden md:block">
         <Link href="/" className="text-gray-700 hover:text-blue-600">功能介绍</Link>
         <Link href="/pricing" className="text-gray-700 hover:text-blue-600">定价方案</Link>
-        <Link href="/download" className="text-gray-700 hover:text-blue-600">下载</Link> {/* ✅ 新增 */}
+        <Link href="/download" className="text-gray-700 hover:text-blue-600">下载</Link>
         <Link href="/contact" className="text-gray-700 hover:text-blue-600">联系我们</Link>
+        {/* ✅ 新增在线体验入口 */}
+        <a 
+          href="http://106.53.66.116/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-gray-700 hover:text-blue-600"
+        >
+          在线体验
+        </a>
       </nav>
       <div className="space-x-4">
         <Link href="/login" className="text-blue-600 font-medium hover:underline">登录</Link>
