@@ -34,7 +34,7 @@ export default function Home() {
           {isClient && (
             <div className="flex justify-center">
               <Image
-                src="/demo.gif"
+                src="/demo_1.gif"
                 alt="PDF 翻译演示"
                 width={720}
                 height={480}
