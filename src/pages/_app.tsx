@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'  // 👈 新增
+import { Analytics } from "@vercel/analytics/next"
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       {/* ✅ 全局挂载 SpeedInsights */}
       <SpeedInsights />
+      <Analytics />
     </>
   )
 }
