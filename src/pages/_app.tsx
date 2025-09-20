@@ -1,6 +1,8 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { SpeedInsights } from '@vercel/speed-insights/next'  // 👈 新增
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +19,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
       {/* ✅ 包裹 Layout（可扩展导航、footer） */}
       <Component {...pageProps} />
+      {/* ✅ 全局挂载 SpeedInsights */}
+      <SpeedInsights />
     </>
   )
 }
