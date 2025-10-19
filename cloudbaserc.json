@@ -1,7 +1,7 @@
 {
     "envId": "cloud1-5gf7i2kzbc906975",
     "framework": {
-      "name": "next-app",
+      "name": "next-static",
       "plugins": {
         "next": {
           "use": "@cloudbase/framework-plugin-next",
