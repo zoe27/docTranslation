@@ -10,42 +10,44 @@ export default function Header() {
   return (
     <header className="w-full bg-white fixed top-0 z-50 shadow">
       <div className="px-6 py-4 flex items-center justify-between">
-        {/* 左侧 Logo */}
+        {/* 左侧：只显示 Logo 图标，大小与文字保持一致感 */}
         <Link href="/" onClick={handleNavClick} className="flex items-center">
           <Image
-            src="/logo_v2.png"
-            alt="CraftTrans AI Logo"
-            width={160}
-            height={48}
-            className="h-12 w-auto"
-            priority
-          />
+  src="/logo_v2.png"
+  alt="CraftTrans AI Logo"
+  width={160}        // 增大宽度
+  height={48}        // 增大高度
+  className="h-12 w-auto"  // 高度 48px，宽度自适应
+  priority
+/>
+
         </Link>
 
         {/* 桌面端导航 */}
-        <nav className="space-x-6 hidden md:flex items-center">
-          <Link href="/" className="text-gray-700 hover:text-blue-600">
-            功能介绍
-          </Link>
-          <Link href="/pricing" className="text-gray-700 hover:text-blue-600">
-            定价方案
-          </Link>
-          <Link href="/download" className="text-gray-700 hover:text-blue-600">
-            下载
-          </Link>
-          <Link href="/contact" className="text-gray-700 hover:text-blue-600">
-            联系我们
-          </Link>
+        <nav className="space-x-6 hidden md:block">
+          <Link href="/" className="text-gray-700 hover:text-blue-600">功能介绍</Link>
+          <Link href="/pricing" className="text-gray-700 hover:text-blue-600">定价方案</Link>
+          <Link href="/download" className="text-gray-700 hover:text-blue-600">下载</Link>
+          <Link href="/contact" className="text-gray-700 hover:text-blue-600">联系我们</Link>
 
-          {/* ✅ 在线体验：改为站内跳转 */}
-          <Link
-            href="/experience"
-            className="relative text-gray-700 hover:text-blue-600 font-medium"
-            onClick={handleNavClick}
+
+
+
+
+
+
+
+
+
+          <a
+            href="http://106.53.66.116/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-blue-600"
           >
             在线体验
-            <span className="absolute -top-2 -right-4 text-sm">🔥</span>
-          </Link>
+
+          </a>
         </nav>
 
         {/* 桌面端：登录/注册 */}
@@ -104,15 +106,17 @@ export default function Header() {
               联系我们
             </Link>
 
-            {/* ✅ 在线体验：改为站内跳转 */}
-            <Link
-              href="/experience"
+
+            <a
+              href="http://106.53.66.116/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2 hover:text-blue-600"
               onClick={handleNavClick}
-              className="relative py-2 hover:text-blue-600 font-medium"
             >
               在线体验
-              <span className="absolute -top-1 -right-6 text-sm">🔥</span>
-            </Link>
+
+            </a>
 
             <div className="h-px bg-gray-200 my-2" />
 

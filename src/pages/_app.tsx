@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '../styles/pdf-experience.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { SpeedInsights } from '@vercel/speed-insights/next'  // 👈 新增
