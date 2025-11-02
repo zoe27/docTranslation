@@ -1,0 +1,13 @@
+#pdf-experience {
+    font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  
+  #result {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
+  
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  

@@ -37,16 +37,15 @@ export default function Header() {
             联系我们
           </Link>
 
-          {/* ✅ 在线体验 + 🔥 */}
-          <a
-            href="http://106.53.66.116/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* ✅ 在线体验：改为站内跳转 */}
+          <Link
+            href="/experience"
             className="relative text-gray-700 hover:text-blue-600 font-medium"
+            onClick={handleNavClick}
           >
             在线体验
             <span className="absolute -top-2 -right-4 text-sm">🔥</span>
-          </a>
+          </Link>
         </nav>
 
         {/* 桌面端：登录/注册 */}
@@ -105,17 +104,15 @@ export default function Header() {
               联系我们
             </Link>
 
-            {/* ✅ 在线体验 + 🔥 (移动端) */}
-            <a
-              href="http://106.53.66.116/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative py-2 hover:text-blue-600 font-medium"
+            {/* ✅ 在线体验：改为站内跳转 */}
+            <Link
+              href="/experience"
               onClick={handleNavClick}
+              className="relative py-2 hover:text-blue-600 font-medium"
             >
               在线体验
               <span className="absolute -top-1 -right-6 text-sm">🔥</span>
-            </a>
+            </Link>
 
             <div className="h-px bg-gray-200 my-2" />
 
