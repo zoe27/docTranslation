@@ -27,7 +27,7 @@ export default function Header() {
         <nav className="space-x-6 hidden md:block">
           <Link href="/" className="text-gray-700 hover:text-blue-600">功能介绍</Link>
           <Link href="/pricing" className="text-gray-700 hover:text-blue-600">定价方案</Link>
-          <Link href="/download" className="text-gray-700 hover:text-blue-600">下载</Link>
+          {/* <Link href="/download" className="text-gray-700 hover:text-blue-600">下载</Link> */}
           <Link href="/contact" className="text-gray-700 hover:text-blue-600">联系我们</Link>
 
 
