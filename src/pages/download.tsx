@@ -5,8 +5,8 @@ export default function DownloadPage() {
   return (
     <>
       <Head>
-        <title>下载 PDF Translation 客户端</title>
-        <meta name="description" content="官方客户端下载页面，安全、稳定、本地运行的 PDF 高保真翻译工具。" />
+        <title>下载译比邻客户端 - Yibelin PDF 翻译工具</title>
+        <meta name="description" content="译比邻（Yibelin）官方客户端下载，安全、稳定、本地运行的 PDF 高保真翻译工具。" />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -17,7 +17,7 @@ export default function DownloadPage() {
         <div className="max-w-2xl mx-auto text-center mb-10">
           <h1 className="text-4xl font-bold mb-4">客户端下载中心</h1>
           <p className="text-gray-600 text-base md:text-lg">
-            PDF Translation 是一款本地运行、高度还原格式的 PDF 翻译工具，点击下方按钮获取最新版客户端。
+            译比邻（Yibelin）是一款本地运行、高度还原格式的 PDF 翻译工具，点击下方按钮获取最新版客户端。
           </p>
         </div>
 

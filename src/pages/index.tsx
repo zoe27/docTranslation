@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>CraftTrans AI｜高保真 PDF 翻译工具</title>
+        <title>译比邻｜高保真 PDF 翻译工具</title>
         <meta
           name="description"
-          content="CraftTrans AI：还原原始格式的 PDF 翻译工具，专业、快速、安全。"
+          content="译比邻（Yibelin）：还原原始格式的 PDF 翻译工具，专业、快速、安全。"
         />
       </Head>
 

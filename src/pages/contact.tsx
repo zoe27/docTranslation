@@ -6,8 +6,8 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>联系我们 | PDF Translation</title>
-        <meta name="description" content="提交反馈、获取安装包或寻求技术支持，欢迎通过以下方式联系我们。" />
+        <title>联系我们 | 译比邻</title>
+        <meta name="description" content="译比邻（Yibelin）客服支持，提交反馈、获取安装包或寻求技术支持。" />
       </Head>
 
       <Header />

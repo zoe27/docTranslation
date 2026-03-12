@@ -14,7 +14,7 @@ export default function Header() {
         <Link href="/" onClick={handleNavClick} className="flex items-center">
           <Image
   src="/logo_v2.png"
-  alt="CraftTrans AI Logo"
+  alt="译比邻 Yibelin Logo"
   width={160}        // 增大宽度
   height={48}        // 增大高度
   className="h-12 w-auto"  // 高度 48px，宽度自适应

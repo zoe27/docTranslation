@@ -6,8 +6,8 @@ export default function Pricing() {
   return (
     <>
       <Head>
-        <title>定价方案 - PDF Translation</title>
-        <meta name="description" content="选择适合你的翻译套餐，支持点数购买和订阅服务。" />
+        <title>定价方案 - 译比邻 PDF 翻译</title>
+        <meta name="description" content="译比邻（Yibelin）翻译套餐，支持点数购买和订阅服务，高保真 PDF 翻译工具。" />
       </Head>
 
       <Header />
