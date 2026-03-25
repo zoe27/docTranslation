@@ -40,7 +40,7 @@ export default function Header() {
 
 
           <a
-            href="http://106.53.66.116/"
+            href="https://yibelin.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700 hover:text-blue-600"
@@ -108,7 +108,7 @@ export default function Header() {
 
 
             <a
-              href="http://106.53.66.116/"
+              href="https://yibelin.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="py-2 hover:text-blue-600"
