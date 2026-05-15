@@ -5,7 +5,7 @@ if (window.__PDF_EXPERIENCE_JS_LOADED__) {
     window.__PDF_EXPERIENCE_JS_LOADED__ = true;
   
     // ⚙️ 后端接口地址（按你自己的后端服务改）
-    const API_BASE = 'http://106.53.66.116/api'; // ✅ 确保没有多余斜杠
+    const API_BASE = 'http://149.104.77.24:8000/api'; // ✅ 确保没有多余斜杠
   
     // ✅ DOM 元素获取函数
     const fileInput = () => document.getElementById('file-input');
