@@ -3,18 +3,20 @@ import '../styles/pdf-experience.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
-import { SpeedInsights } from '@vercel/speed-insights/next'  // 👈 新增
-import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
+import { LocaleProvider } from '@/contexts/LocaleContext'
+import { DEFAULT_LOCALE, getTranslations } from '@/lib/i18n'
 
+const defaultMeta = getTranslations(DEFAULT_LOCALE).meta
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      {/* ✅ 设置全局页面 Head，默认 title 和描述 */}
+    <LocaleProvider>
       <Head>
-        <title>PDF Translation</title>
+        <title>{defaultMeta.siteTitle}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="高保真还原格式的 PDF 文档翻译工具" />
+        <meta name="description" content={defaultMeta.siteDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -32,11 +34,9 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </Script>
 
-      {/* ✅ 包裹 Layout（可扩展导航、footer） */}
       <Component {...pageProps} />
-      {/* ✅ 全局挂载 SpeedInsights */}
       <SpeedInsights />
       <Analytics />
-    </>
+    </LocaleProvider>
   )
 }

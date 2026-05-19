@@ -5,3 +5,12 @@ next-env.d.ts
 .next/react-loadable-manifest.json
 .next/*
 
+.cursor/skills/yibelin-frontend-developer-operator/SKILL.md
+.cursor/skills/yibelin-ui-designer-operator/SKILL.md
+.vscode/settings.json
+agents/engineering-frontend-developer.md
+agents/ui-designer.md
+logs/docTranslation-frontend-dev-log.md
+logs/docTranslation-ui-design-log.md
+output/frontend/.gitkeep
+output/ui/
