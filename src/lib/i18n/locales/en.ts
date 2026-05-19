@@ -133,6 +133,10 @@ const en: Translations = {
     emailPlaceholder: 'you@example.com',
     emailAria: 'Email for launch notification',
     notifySubmit: 'Notify me',
+    notifySubmitting: 'Submitting…',
+    notifySuccess: 'Thanks — you are on the list.',
+    notifyError: 'Could not submit. Try again or email us at',
+    notifyErrorConfig: 'Form service is not configured. Please email us at',
     faqTitle: 'FAQ',
     faq: [
       {
@@ -192,6 +196,10 @@ const en: Translations = {
     messageLabel: 'Details',
     messagePlaceholder: 'Describe your issue, idea, or partnership needs...',
     submit: 'Submit feedback',
+    submitting: 'Submitting…',
+    submitSuccess: 'Thanks — we received your message and will review it soon.',
+    submitError: 'Could not submit. Try again or email us at',
+    submitErrorConfig: 'Form service is not configured. Please email us at',
     productFeedbackTitle: 'Product feedback',
     productFeedbackDesc: 'Features, translation quality, UX — your input sets our priorities.',
     partnershipTitle: 'Partnership & volume',

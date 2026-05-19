@@ -99,6 +99,10 @@ const zh: Translations = {
     emailPlaceholder: 'your@email.com',
     emailAria: '接收上线通知的邮箱',
     notifySubmit: '订阅通知',
+    notifySubmitting: '提交中…',
+    notifySuccess: '已提交，感谢订阅。',
+    notifyError: '提交失败，请稍后重试或直接发邮件至',
+    notifyErrorConfig: '表单服务未配置，请直接发邮件至',
     faqTitle: '常见问题',
     faq: [
       {
@@ -157,6 +161,10 @@ const zh: Translations = {
     messageLabel: '详细描述',
     messagePlaceholder: '请描述问题、建议或合作需求…',
     submit: '提交反馈',
+    submitting: '提交中…',
+    submitSuccess: '已提交，感谢你的反馈！我们会尽快查看。',
+    submitError: '提交失败，请稍后重试或直接发邮件至',
+    submitErrorConfig: '表单服务未配置，请直接发邮件至',
     productFeedbackTitle: '产品反馈',
     productFeedbackDesc: '功能想法、翻译质量、界面体验——直接影响迭代优先级。',
     partnershipTitle: '合作与批量',

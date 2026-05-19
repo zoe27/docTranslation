@@ -61,6 +61,10 @@ export type Translations = {
     emailPlaceholder: string
     emailAria: string
     notifySubmit: string
+    notifySubmitting: string
+    notifySuccess: string
+    notifyError: string
+    notifyErrorConfig: string
     faqTitle: string
     faq: FaqItem[]
     ctaTitle: string
@@ -94,6 +98,10 @@ export type Translations = {
     messageLabel: string
     messagePlaceholder: string
     submit: string
+    submitting: string
+    submitSuccess: string
+    submitError: string
+    submitErrorConfig: string
     productFeedbackTitle: string
     productFeedbackDesc: string
     partnershipTitle: string

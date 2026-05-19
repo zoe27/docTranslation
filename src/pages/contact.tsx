@@ -3,7 +3,9 @@ import Image from 'next/image'
 import { useState } from 'react'
 import SiteLayout from '@/components/layout/SiteLayout'
 import { useLocale } from '@/contexts/LocaleContext'
-import { CONTACT_EMAIL, EXPERIENCE_URL, FORMSUBMIT_URL, SITE_URL } from '@/lib/site'
+import { CONTACT_EMAIL, EXPERIENCE_URL, SITE_URL } from '@/lib/site'
+
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error' | 'error_config'
 
 function MailIcon() {
   return (
@@ -34,6 +36,50 @@ export default function ContactPage() {
   const { contact: c, meta } = t
   const [copied, setCopied] = useState(false)
   const [topic, setTopic] = useState<'feedback' | 'support' | 'partnership'>('feedback')
+  const [message, setMessage] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [formStatus, setFormStatus] = useState<FormStatus>('idle')
+
+  const topics = [
+    { id: 'feedback' as const, label: c.topicFeedback },
+    { id: 'support' as const, label: c.topicSupport },
+    { id: 'partnership' as const, label: c.topicPartnership },
+  ]
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setFormStatus('submitting')
+
+    const topicLabel = topics.find((x) => x.id === topic)?.label ?? topic
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'feedback',
+          message,
+          contact_email: contactEmail,
+          topic: topicLabel,
+        }),
+      })
+
+      if (res.status === 503) {
+        setFormStatus('error_config')
+        return
+      }
+      if (!res.ok) {
+        setFormStatus('error')
+        return
+      }
+
+      setMessage('')
+      setContactEmail('')
+      setFormStatus('success')
+    } catch {
+      setFormStatus('error')
+    }
+  }
 
   const copyEmail = async () => {
     try {
@@ -44,12 +90,6 @@ export default function ContactPage() {
       window.location.href = `mailto:${CONTACT_EMAIL}`
     }
   }
-
-  const topics = [
-    { id: 'feedback' as const, label: c.topicFeedback },
-    { id: 'support' as const, label: c.topicSupport },
-    { id: 'partnership' as const, label: c.topicPartnership },
-  ]
 
   return (
     <>
@@ -153,16 +193,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-1">{c.formTitle}</h2>
                 <p className="text-sm text-gray-600 mb-6">{c.formDesc}</p>
 
-                <form
-                  action={FORMSUBMIT_URL}
-                  method="POST"
-                  className="space-y-5"
-                >
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_subject" value="Yibelin user feedback" />
-                  <input type="hidden" name="_template" value="box" />
-                  <input type="hidden" name="topic" value={topics.find((x) => x.id === topic)?.label ?? topic} />
-
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <fieldset>
                     <legend className="block text-sm font-medium text-gray-900 mb-2">
                       {c.topicLabel}
@@ -193,6 +224,8 @@ export default function ContactPage() {
                       id="contact-email"
                       type="email"
                       name="contact_email"
+                      value={contactEmail}
+                      onChange={(e) => setContactEmail(e.target.value)}
                       placeholder={c.emailOptionalPlaceholder}
                       className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400"
                     />
@@ -207,16 +240,33 @@ export default function ContactPage() {
                       name="message"
                       required
                       rows={6}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       placeholder={c.messagePlaceholder}
                       className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-400 resize-y min-h-[140px]"
                     />
                   </div>
 
+                  {formStatus === 'success' && (
+                    <p className="text-sm text-green-700 bg-green-50 border border-green-100 rounded-xl px-4 py-3" role="status">
+                      {c.submitSuccess}
+                    </p>
+                  )}
+                  {(formStatus === 'error' || formStatus === 'error_config') && (
+                    <p className="text-sm text-red-700 bg-red-50 border border-red-100 rounded-xl px-4 py-3" role="alert">
+                      {formStatus === 'error_config' ? c.submitErrorConfig : c.submitError}{' '}
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium underline">
+                        {CONTACT_EMAIL}
+                      </a>
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white px-6 py-3.5 rounded-xl hover:bg-blue-700 transition font-medium min-h-[48px] shadow-sm hover:shadow"
+                    disabled={formStatus === 'submitting'}
+                    className="w-full bg-blue-600 text-white px-6 py-3.5 rounded-xl hover:bg-blue-700 transition font-medium min-h-[48px] shadow-sm hover:shadow disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {c.submit}
+                    {formStatus === 'submitting' ? c.submitting : c.submit}
                   </button>
                 </form>
               </div>

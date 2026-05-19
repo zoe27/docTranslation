@@ -4,7 +4,9 @@ import { useEffect, useState, type ReactNode } from 'react'
 import SiteLayout from '@/components/layout/SiteLayout'
 import Button from '@/components/ui/Button'
 import { useLocale } from '@/contexts/LocaleContext'
-import { EXPERIENCE_URL, FORMSUBMIT_URL, SITE_URL } from '@/lib/site'
+import { CONTACT_EMAIL, EXPERIENCE_URL, SITE_URL } from '@/lib/site'
+
+type NotifyStatus = 'idle' | 'submitting' | 'success' | 'error' | 'error_config'
 
 function Card({
   title,
@@ -25,9 +27,35 @@ function Card({
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false)
+  const [notifyEmail, setNotifyEmail] = useState('')
+  const [notifyStatus, setNotifyStatus] = useState<NotifyStatus>('idle')
   const { locale, t } = useLocale()
 
   useEffect(() => setIsClient(true), [])
+
+  const handleNotifySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setNotifyStatus('submitting')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'notify', email: notifyEmail }),
+      })
+      if (res.status === 503) {
+        setNotifyStatus('error_config')
+        return
+      }
+      if (!res.ok) {
+        setNotifyStatus('error')
+        return
+      }
+      setNotifyEmail('')
+      setNotifyStatus('success')
+    } catch {
+      setNotifyStatus('error')
+    }
+  }
 
   const { home: h, meta } = t
 
@@ -144,27 +172,40 @@ export default function Home() {
               <h3 className="font-semibold text-gray-900 mb-2">{h.notifyTitle}</h3>
               <p className="text-sm text-gray-600 mb-4">{h.notifyDesc}</p>
               <form
-                action={FORMSUBMIT_URL}
-                method="POST"
+                onSubmit={handleNotifySubmit}
                 className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
               >
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_subject" value="Yibelin launch notify request" />
                 <input
                   type="email"
                   name="email"
                   required
+                  value={notifyEmail}
+                  onChange={(e) => setNotifyEmail(e.target.value)}
                   placeholder={h.emailPlaceholder}
                   aria-label={h.emailAria}
                   className="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
                 />
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition min-h-[44px]"
+                  disabled={notifyStatus === 'submitting'}
+                  className="px-5 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition min-h-[44px] disabled:opacity-60"
                 >
-                  {h.notifySubmit}
+                  {notifyStatus === 'submitting' ? h.notifySubmitting : h.notifySubmit}
                 </button>
               </form>
+              {notifyStatus === 'success' && (
+                <p className="text-sm text-green-700 mt-3" role="status">
+                  {h.notifySuccess}
+                </p>
+              )}
+              {(notifyStatus === 'error' || notifyStatus === 'error_config') && (
+                <p className="text-sm text-red-700 mt-3" role="alert">
+                  {notifyStatus === 'error_config' ? h.notifyErrorConfig : h.notifyError}{' '}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="underline font-medium">
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
+              )}
             </div>
           </section>
 
