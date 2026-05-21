@@ -26,8 +26,7 @@ const en: Translations = {
     enFull: 'English',
   },
   footer: {
-    tempUrlNote:
-      'Web experience uses a temporary URL while the official domain is being registered.',
+    tempUrlNote: 'This site and the online experience use our official domains.',
     mvpNote: 'Public MVP — features and pricing may change.',
     copyright: 'All rights reserved.',
   },
@@ -40,7 +39,7 @@ const en: Translations = {
     tryOnline: 'Try online free',
     howItWorks: 'How it works',
     tempUrlHint:
-      'Official domain registration in progress; the experience uses a temporary URL. Features and rules may change during MVP.',
+      'Public MVP — features and rules may change. See the web app for current limits.',
     demoAlt: 'Yibelin PDF translation demo',
     featuresTitle: 'Core capabilities',
     featuresSubtitle: 'Everything below reflects what the current web experience supports.',
@@ -111,7 +110,7 @@ const en: Translations = {
         title: 'Online PDF translation',
         description:
           'Open the web experience in your browser: upload a PDF, translate paragraph by paragraph, review against the original layout, and export when ready.',
-        note: 'Public MVP. The entry URL is temporary; we will update this site when the official domain is live.',
+        note: 'Public MVP — details and limits follow the live web experience.',
       },
       {
         title: 'Layout-aware editing',
@@ -156,8 +155,8 @@ const en: Translations = {
         a: 'No installation is required — use the online experience in your browser.',
       },
       {
-        q: 'Why is the experience link temporary?',
-        a: 'While the official domain is being registered, we provide a temporary entry point linked from this site. We will update this page when the permanent URL is live.',
+        q: 'How do I open the online experience?',
+        a: 'Click “Try online” in the navigation or on this page — it opens the web app in a new tab. No install required.',
       },
       {
         q: 'How can I give feedback?',

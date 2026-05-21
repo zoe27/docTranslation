@@ -26,7 +26,7 @@ const zh: Translations = {
     enFull: 'English',
   },
   footer: {
-    tempUrlNote: '在线体验为临时入口，正式域名备案中。',
+    tempUrlNote: '官网与在线体验均已使用正式域名。',
     mvpNote: '当前为公测 MVP，功能与规则可能调整。',
     copyright: '保留所有权利。',
   },
@@ -38,8 +38,7 @@ const zh: Translations = {
       '在浏览器中上传 PDF，按段落翻译并对照原文排版，适用于合同、论文与各类商务文档。',
     tryOnline: '免费在线体验',
     howItWorks: '了解如何使用',
-    tempUrlHint:
-      '正式域名备案中，体验入口为临时地址；功能与规则可能在 MVP 阶段调整。',
+    tempUrlHint: '当前为公测 MVP，功能与规则可能在调整，请以在线体验站内说明为准。',
     demoAlt: 'Yibelin PDF 翻译演示',
     featuresTitle: '核心能力',
     featuresSubtitle: '以下内容对应当前在线体验站已支持的能力。',
@@ -78,7 +77,7 @@ const zh: Translations = {
         title: '在线 PDF 翻译',
         description:
           '在浏览器中打开在线体验，上传 PDF，按段落翻译并对照原版式审校，满意后可导出译文文档。',
-        note: '当前为公测 MVP；体验入口为临时地址，正式域名备案通过后会在本站更新。',
+        note: '公测 MVP 阶段，具体规则以在线体验站内说明为准。',
       },
       {
         title: '版式保留与段落编辑',
@@ -122,8 +121,8 @@ const zh: Translations = {
         a: '目前仅需浏览器访问在线体验，无需安装客户端。',
       },
       {
-        q: '为什么体验链接是临时的？',
-        a: '正式域名备案中，本站提供临时入口。正式地址启用后会在本站更新。',
+        q: '如何打开在线体验？',
+        a: '点击本站导航或页面中的「在线体验」，将在新标签页打开 Web 端，无需安装客户端。',
       },
       {
         q: '如何反馈问题或建议？',
