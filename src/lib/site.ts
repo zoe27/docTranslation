@@ -1,5 +1,5 @@
 export const EXPERIENCE_URL =
-  process.env.NEXT_PUBLIC_EXPERIENCE_URL ?? 'https://yibelin.com/'
+  process.env.NEXT_PUBLIC_EXPERIENCE_URL ?? 'https://www.yibelin.com/'
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.tranzify.cn'
