@@ -1,6 +1,9 @@
 # PDF Translation - 官网系统
 
-一个支持注册登录、套餐购买、额度查看的官网平台，用于配合 PDF 翻译客户端工具。门户站点 https://www.tranzify.cn/
+Yibelin（译比邻）高保真 PDF 在线翻译的门户站点。
+
+- 产品体验站：https://www.yibelin.com/
+- 门户站点：https://www.tranzify.cn/
 
 ## 🎬 使用演示
 
